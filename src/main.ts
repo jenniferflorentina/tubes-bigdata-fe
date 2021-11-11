@@ -1,13 +1,11 @@
 import VueMask from 'v-mask';
 import Vue from 'vue';
 import VueFeather from 'vue-feather';
-import InstantSearch from 'vue-instantsearch';
 import VueSkycons from 'vue-skycons';
 import Vuebar from 'vuebar';
 import DatetimePicker from 'vuetify-datetime-picker';
 import App from './App.vue';
 import vuetify from './plugins/vuetify';
-import './registerServiceWorker';
 import router from './router';
 import store from './store';
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,7 +17,6 @@ Vue.use(VueFeather);
 Vue.use(VueSkycons, {
   color: '#1e88e5',
 });
-Vue.use(InstantSearch);
 Vue.use(Vuebar);
 Vue.use(DatetimePicker);
 

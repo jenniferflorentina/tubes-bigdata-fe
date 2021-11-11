@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 // eslint-disable-next-line import/no-cycle
-import auth from '@/store/modules/auth';
 import global from '@/store/modules/global';
 // eslint-disable-next-line import/no-cycle
 import table from '@/store/modules/table';
@@ -11,7 +10,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    auth,
     global,
     table,
   },

@@ -1,31 +1,22 @@
 <template>
   <div>
-    <index-navbar />
     <section
-      class="header relative pt-16 items-center flex h-screen max-h-860-px"
+      class="container header relative pt-16 items-center flex h-screen max-h-860-px"
     >
       <v-row v-for="item, index in items" :key="index">
-        <p>{{item.code}}</p>
-        <h1>{{item.name}}</h1>
-        <h3>{{item.price}}</h3>
+        <p>{{item.id}}</p>
+        <h1>{{item.title}}</h1>
       </v-row>
     </section>
-    <footer-component />
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
 import { mapActions, mapGetters } from 'vuex';
 import BaseService from "@/services/Base";
 
 export default Vue.extend({
   name: 'Index',
-  components: {
-    IndexNavbar,
-    FooterComponent,
-  },
 
   data: () => ({
     // Data General,
@@ -55,7 +46,7 @@ export default Vue.extend({
     },
     async request(params) {
       this.setLoading(true);
-      const service = new BaseService('/products');
+      const service = new BaseService('/getAll');
       const res = await service.get(params);
       this.items = res.data;
       this.$forceUpdate();

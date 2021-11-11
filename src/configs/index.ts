@@ -3,7 +3,7 @@ import theme from './theme';
 export default {
   // product display information
   product: {
-    name: 'TubesPBBO',
+    name: 'TubesBigData',
     version: '0.0.1',
   },
 
