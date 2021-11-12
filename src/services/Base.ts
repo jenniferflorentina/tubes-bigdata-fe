@@ -22,14 +22,19 @@ class BaseService {
     const res = await axios.post(`${this.baseURL}`, payload);
     return res.data;
   }
-
+  
   async put(id, payload: {}): Promise<any> {
     const res = await axios.put(`${this.baseURL}/${id}`, payload);
     return res.data;
   }
 
-  async delete(id: number): Promise<any> {
+  async delete(id): Promise<any> {
     const res = await axios.delete(`${this.baseURL}/${id}`);
+    return res.data;
+  }
+
+  async deleteMultiple(params: string): Promise<any> {
+    const res = await axios.delete(`${this.baseURL}?${params}`);
     return res.data;
   }
 

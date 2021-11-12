@@ -21,7 +21,7 @@ export default {
   dark: {
     background: '#05090c',
     surface: '#111b27',
-    primary: '#c80b0e',
+    primary: '#4B3869',
     secondary: '#829099',
     accent: '#82B1FF',
     error: '#FF5252',
@@ -34,7 +34,7 @@ export default {
   light: {
     background: '#ffffff',
     surface: '#f2f5f8',
-    primary: '#c80b0e',
+    primary: '#4B3869',
     secondary: '#a0b9c8',
     accent: '#048ba8',
     error: '#ef476f',

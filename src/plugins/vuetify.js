@@ -5,7 +5,7 @@ import '@/scss/vuetify/overrides.scss';
 Vue.use(Vuetify);
 
 const theme = {
-  primary: '#c80b0e', // change header color from here || "#1e88e6", "#21c1d6", "#fc4b6c", "#563dea", "#9C27b0", "#ff9800"
+  primary: '#4B3869', // change header color from here || "#1e88e6", "#21c1d6", "#fc4b6c", "#563dea", "#9C27b0", "#ff9800"
   info: '#1e88e5',
   success: '#06d79c',
   accent: '#ef5350',
