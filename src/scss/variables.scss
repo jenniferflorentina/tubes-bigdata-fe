@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
 // Globals
-$body-font-family: "Montserrat", sans-serif !default;
+$body-font-family: "Trebuchet MS", sans-serif !default;
 $border-radius-root: 3px;
-$font-size-root: 14px;
+$font-size-root: 16px;
 $btn-icon-size: 20px;
 
 // Custom variables
@@ -30,36 +30,31 @@ $light-danger: #f9e7eb;
 
 $headings: (
   "h1": (
-    "size": 3.3125rem,
+    "size": 3.6125rem,
     "line-height": 1.15em,
   ),
   "h2": (
-    "size": 2.25rem,
+    "size": 2.55rem,
     "line-height": 1.5em,
   ),
   "h3": (
-    "size": 1.25rem,
+    "size": 1.55rem,
     "line-height": 1.5em,
   ),
   "h4": (
-    "size": 1.15rem,
+    "size": 1.45rem,
     "line-height": 1.5em,
   ),
 );
 
-$h1-font-size: 36px !default;
-$h2-font-size: 24px !default;
-$h3-font-size: 21px !default;
-$h4-font-size: 18px !default;
-$h5-font-size: 16px !default;
-$h6-font-size: 14px !default;
+$h1-font-size: 40px !default;
+$h2-font-size: 27px !default;
+$h3-font-size: 25px !default;
+$h4-font-size: 22px !default;
+$h5-font-size: 20px !default;
+$h6-font-size: 18px !default;
 
 // Dark
 $dark-theme-layout: #111519;
 $dark-theme-card: #1d2228;
 $dark-theme-hover: #616161;
-
-// Login Screen Validation Error
-.custom-validation .v-messages__message{
-  color: white !important;
-}

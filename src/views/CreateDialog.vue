@@ -1,12 +1,12 @@
 <template>
   <v-dialog
     v-model="isOpen"
-    max-width="60rem"
+    max-width="70rem"
     scrollable
     transition="dialog-bottom-transition"
   >
-    <v-card class="px-8 pb-4">
-      <v-toolbar elevation="0">
+    <v-card class="pb-4">
+      <v-toolbar class="px-4" color="primary" dark>
         <v-toolbar-title>{{title}} Todo</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
@@ -24,7 +24,7 @@
       </v-toolbar>
 
       <v-card-text class="my-4">
-        <v-form ref="form" @submit.prevent="save()">
+        <v-form class="px-4" ref="form" @submit.prevent="save()">
           <v-row align="center" justify="center">
             <v-col class="pb-0" cols="12" lg="6">
               <v-text-field
