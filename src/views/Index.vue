@@ -73,7 +73,6 @@
 import Vue from 'vue';
 import { mapActions } from 'vuex';
 import BaseService from "@/services/Base";
-import validation from '@/validation/index';
 import CreateDialog from '@/views/CreateDialog.vue';
 import DeleteConfirmDialog from '@/views/DeleteConfirmDialog.vue';
 
@@ -125,7 +124,7 @@ export default Vue.extend({
         type: 'string',
         value: '',
         rules: [
-          validation.required('Title'),
+          (v) => !!v || "Title is required",
         ],
       },
       deadline: {
@@ -135,7 +134,7 @@ export default Vue.extend({
         formatted: '',
         showModal: false,
         rules: [
-          validation.required('Deadline'),
+          (v) => !!v || "Deadline is required",
         ],
       },
       description: {

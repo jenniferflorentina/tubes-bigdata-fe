@@ -2,7 +2,7 @@ module.exports = {
   transpileDependencies: ['vuetify'],
   pwa: {
     name: 'TubesBigData',
-    themeColor: '#c80b0e',
+    themeColor: '#4B3869',
     workboxOptions: {
       skipWaiting: true,
     },

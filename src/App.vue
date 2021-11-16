@@ -1,22 +1,6 @@
 <template>
   <v-app>
     <router-view />
-
-    <v-snackbar
-      v-model="snackbar.isVisible"
-      :color="snackbar.color"
-      :timeout="3000"
-      absolute
-      bottom
-      class="mb-16"
-    >
-      {{ snackbar.message }}
-      <template v-slot:action="{ attrs }">
-        <v-btn v-bind="attrs" color="red" text @click="closeSnackbar()">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
   </v-app>
 </template>
 
