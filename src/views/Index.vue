@@ -1,6 +1,28 @@
 <template>
   <div class="container">
     <h1 class="mt-8">To Do List</h1>
+    <v-row class="mt-4 mb-2" justify="start">
+      <v-btn
+        class="ml-2"
+        color="primary"
+        @click="mode='all'"
+      >
+        All
+      </v-btn>
+      <v-btn
+        class="ml-2"
+        color="primary"
+        @click="mode='notdone'"
+      >
+        Not Done
+      </v-btn>
+      <v-btn
+        class="ml-2"
+        color="primary"
+        @click="mode='done'">
+          Done
+      </v-btn>
+    </v-row>
     <section class="mx-4 my-16">
       <v-row class="mx-0 mb-2" justify="end">
         <v-btn
@@ -75,6 +97,7 @@ import { mapActions } from 'vuex';
 import BaseService from "@/services/Base";
 import CreateDialog from '@/views/CreateDialog.vue';
 import DeleteConfirmDialog from '@/views/DeleteConfirmDialog.vue';
+import moment from 'moment';
 
 export default Vue.extend({
   name: 'Index',
@@ -86,6 +109,7 @@ export default Vue.extend({
     // Data General,
     items: [] as any[],
     deletedId: '',
+    mode: 'all',
     selectedTodo: [] as any,
     headers: [
       {
@@ -109,6 +133,12 @@ export default Vue.extend({
         text: 'Status',
         align: 'left',
         value: 'status',
+        dataType: 'string',
+      },
+      {
+        text: 'Deadline',
+        align: 'left',
+        value: 'deadline',
         dataType: 'string',
       },
       {
@@ -169,11 +199,30 @@ export default Vue.extend({
     this.setLoading(false);
   },
 
+  watch: {
+    mode: {
+      async handler() {
+        this.refresh();
+      },
+    },
+  },
+
   methods: {
     ...mapActions(['setLoading', 'setSnackbar']),
     async refresh() {
       try {
-        await this.request('');
+        let params = '';
+        switch (this.mode) {
+          case 'done':
+            params += 'status=true'
+            break;
+          case 'notdone':
+            params += 'status=false'
+            break;
+          default:
+            break;
+        }
+        await this.request(params);
       } catch (e) {
         this.setSnackbar({
           isVisible: true,
@@ -196,6 +245,8 @@ export default Vue.extend({
       switch (headerValue) {
         case "status":
           return item[headerValue]? 'Done' : 'Not Done';
+        case "deadline":
+          return moment(item[headerValue]).format('DD-MM-YYYY');
         default:
           return item[headerValue];
       }

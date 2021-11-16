@@ -185,7 +185,6 @@ export default Vue.extend({
       this.title = type[0].toUpperCase() + type.substring(1);
       if (type !== 'create') {
         this.fillForm(item);
-      }else{
         this.id = item.id;
       }
     },
